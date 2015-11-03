@@ -1,0 +1,26 @@
+{
+  "name": "curtain",
+  "version": "1.0.0",
+  "authors": [
+    "Cameron Leslie <cameronleslie@gmail.com>"
+  ],
+  "description": "If you're gonna come back, let me give you some zazz.",
+  "main": "curtain.js",
+  "keywords": [
+    "ad",
+    "ads",
+    "jquery",
+    "curtain"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}

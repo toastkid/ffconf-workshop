@@ -1,0 +1,8 @@
+.place-kitten {
+  background-image: url('https://s3.amazonaws.com/ooomf-com-files/BZVRjxwfRaoelGxNSGTA_P1070545.jpg');
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}

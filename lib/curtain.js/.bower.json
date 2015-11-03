@@ -1,0 +1,36 @@
+{
+  "name": "curtain",
+  "version": "1.0.1",
+  "authors": [
+    "Cameron Leslie <cameronleslie@gmail.com>"
+  ],
+  "description": "If you're gonna come back, let me give you some zazz.",
+  "main": "curtain.js",
+  "keywords": [
+    "ad",
+    "ads",
+    "jquery",
+    "curtain"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "homepage": "https://github.com/cbleslie/curtain.js",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "51376b662fdabbefa3ab4d497ae580ceb26a1315"
+  },
+  "_source": "git://github.com/cbleslie/curtain.js.git",
+  "_target": "1.0.1",
+  "_originalSource": "curtain.js"
+}

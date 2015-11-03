@@ -1,0 +1,10 @@
+﻿.glyphicon-star {
+    color: darkorange;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.glyphicon-star-empty {
+    cursor: pointer;
+    font-size: 2.5rem;
+}

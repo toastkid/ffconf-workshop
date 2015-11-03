@@ -1,0 +1,14 @@
+.curtain {
+  /* Setup */
+  position: absolute;
+  /* Remove from flow */
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  /* Let the content be swept */
+  white-space: nowrap;
+  /* Inital State before jQuery hits it. */
+  width: 0;
+}
