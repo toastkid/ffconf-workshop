@@ -1,0 +1,57 @@
+
+<div>
+    <div class="row">
+
+        <div class="col-md-9">
+            <h1>{{eventTitle}}</h1>      
+        </div>
+        <div class="col-md-3">
+            <label for="repeatSelect">Change Session:</label>
+            <select name="repeatSelect" id="repeatSelect" ng-model="eventId" ng-change="getEvent()">
+                </>
+                <option ng-repeat="option in events" value="{{option.Id}}">{{option.Title}}</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <h3>{{eventDescription}}</h3>
+        </div>
+    </div>
+
+    <hr />
+
+
+    <form class="form-horizontal" ng-hide="submitted" >
+        <div ng-repeat="q in questions">
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">{{q.question}}</label>
+                <div class="col-sm-9">
+                    <div ng-show="q.type == 'Rating'">
+                        <rating ng-model="q.rate" max="q.max" readonly="isReadonly"></rating>
+                        <b>(<i>Rate:</i> {{q.rate}})</b>
+                    </div>
+                    <div ng-show="q.type == 'YesNo'">
+                        Yes
+                        <input type="radio" ng-model="q.rate" value="2">
+                        No
+                        <input type="radio" ng-model="q.rate" value="1">
+                    </div>
+                    Comments: <textarea class="form-control" ng-model="q.verbatim" rows="3"></textarea>
+
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button ng-hide="submitted" class="btn btn-primary" ng-click="submitData()">Submit Rating</button>
+                <button ng-click="logout()" class="btn btn-secondary">Log Out</button>
+                <div ng-show="submitted">
+                    Thanks for submitting feedback. Click here here to see results<br />
+                    <button ng-click="goToResults()">See Results</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
