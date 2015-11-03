@@ -70,7 +70,7 @@
         $scope.selectedOption = [];
         $scope.questions = [];
         $scope.submitted = false;
-            $http.get('http://api-mswebday.azurewebsites.net/api/events?$filter=ConferenceId ne 2').success(function (response) {
+            $http.get('http://api-mswebday.azurewebsites.net/api/events?$filter=ConferenceId eq 2').success(function (response) {
             $scope.events = response;
         })
 
