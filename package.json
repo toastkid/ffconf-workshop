@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/thebeebs/ffconf-workshop",
   "dependencies": {
-    "live-server": "0.8.2"
+    "live-server": "0.8.2",
+    "typescript" : "^1.6.2"
   }
 }
