@@ -1,6 +1,6 @@
 #Create our base HTML file
 Inside the lab-javascript foldercreate a new html file and call it index.html. 
-Into that file we wat to put some html boiler plate.
+Into that file we wat to put some HTML boiler plate.
 
 #Add our boiler plate
 To add our base CSS files and HTML layout paste the code below into the newly created file. This file links to the css library bootstrap 
@@ -45,7 +45,7 @@ Add the following JavaScript libraries to the HTML page just before the closing 
     <script src="../lib/highchart-ng/dist/highcharts-ng.min.js"></script>
     <script src="app.js"></script>
 	
-If you load the app you should now otice that Angular has kicked in and the {{'here' + '!'}} template 
+If you load the app you should now notice that Angular has kicked in and the {{'here' + '!'}} template 
 has now been populated.
 
 As well as linking to a number of 3rd party Libraries, this also links to a JavaScript library 
@@ -64,7 +64,7 @@ Also locate the ng-app in your HTML file and change it to:
 	ng-app="ratingApp"
 
 #Dependencies
-Our app has a number of 3rd party libaries that it depends on: 
+Our app has a number of 3rd party libs that it depends on: 
 
  - ngRoute (A routing plugin from the Angular team)
  - ui.bootstrap (We use this to create the star rating control later on)
@@ -76,7 +76,7 @@ for our rating app. Replace the current line of code that creates the ratingApp 
 	var ratingApp = angular.module('ratingApp', ['ngRoute', 'ui.bootstrap', 'highcharts-ng']);
 
 #Routing
-Our app will use Angular routing. To set up routing we eed to configure certain routes:
+Our app will use Angular routing. To set up routing we need to configure certain routes:
 
 	function ($routeProvider, $locationProvider, $http) {
 			$routeProvider.
@@ -115,7 +115,7 @@ Next we will add our signinController.
 
 #Controllers
 
-You add a controller using the following code which you will need to add to app.js
+You we need to add a controller using the following code which you you should add to add to app.js
 
     ratingApp.controller('signinController', function ($scope, $http, $location, credStore) {
 
@@ -136,7 +136,8 @@ You add a controller using the following code which you will need to add to app.
     )
 
 On the first line of the code above you might notice that we 
-rely on a dependency called credStore. credStore currently dosen't exist, but it's service that we use to store the users credentials
+rely on a dependency called credStore. credStore currently dosen't exist, 
+but it's service that we use to store the users credentials
 in local storage. 
 
 Add the following code to create the credStore service.
@@ -171,23 +172,24 @@ Add the following code to create the credStore service.
 		}]);
 		
 Now when we add credStore as a depedency Angular will create a new credStore and inject it into the controller. This means that we 
-can reference a varable called credStore in the signinController and it will be a version of whatever was created in the 
+can reference a variable called credStore in the signinController and it will be a version of whatever was created in the 
 factory.
 
-If you look at the code inside signinController you will otice it checks credStore ad if it contains a valid user 
+If you look at the code inside 
+signinController you will notice it checks credStore and if it contains a valid user 
 then it will forward
 the user onto another route /lab-angular/rating.
 
-We there fore need to configure the other routes and the other controllers.
+We now need to configure the other routes and the other controllers.
 
-However before we do that we eed to fix a security issue.
+However, before we do that we need to fix a security issue.
 
 #Resolve
 Before you can call the API you must get a security token. Rather than setting a token everytime we call $http.post we can do it globally 
 with the code  $http.defaults.headers.common.Authorization = 'Bearer ' + token;
 
-To ensure that this code is run before we call an API will will do somethig a little hacky and make sure that the ratingApp.resolve function below
-is called everything a user goes to a specific route.
+To ensure that this code is run before we call an API we will do something a little hacky and make sure that the ratingApp.resolve function below
+is called everytime a user goes to a specific route.
 
 Firstly add the following function:
 
@@ -208,12 +210,13 @@ Firstly add the following function:
         }
     };
 	
-Next we will add in the other routes that thew app requires and we will set a property called resolve to poit to ratingApp.resolve. 
+Next we will add in the other routes that the app requires and we will set a property called resolve to poit to ratingApp.resolve. 
 This will ensure that the resolve function is always called before the route is navigated to.
 
-ratingApp.config(['$routeProvider','$locationProvider', 
-function ($routeProvider, $locationProvider, $http) {
-    $routeProvider.
+
+	ratingApp.config(['$routeProvider','$locationProvider', 
+	function ($routeProvider, $locationProvider, $http) {
+ 	$routeProvider.
         when('/lab-angular', {
             templateUrl: '/lab-angular/partials/login.html',
             controller: 'signinController',
@@ -233,11 +236,10 @@ function ($routeProvider, $locationProvider, $http) {
             redirectTo: '/lab-angular'
         });
     $locationProvider.html5Mode(true)
-
-}]);
+	}]);
 
 #Partial
-Lets add the final to partial 2 views that we will require. First create a file called rating.html 
+Lets add the final 2 views that we will require. First create a file called rating.html 
 and add the following code to it:
 
 	<div>
@@ -314,9 +316,12 @@ Then add a file called results.html and add the following code to it:
 	</div>
 	
 #Controllers
-If you run the app, you will ow be able to login but the rating page will be a mess. This is because we have't added the controllers.
+If you run the app, you will now be able to login but the rating page will be a mess. This is because we have't added the controllers.
 
-Here is the code for the rating and results controler add this to app.js underneath the signinController
+Here is the code for the rating 
+and results controller 
+add this to app.js 
+underneath the signinController
 
 	ratingApp.controller('ratingController', function ($scope, $http, $location, credStore) {
 	
@@ -466,6 +471,9 @@ Here is the code for the rating and results controler add this to app.js underne
 		})
 		
 
-#What next
+#Next
 
-The code is very hacky. Why not work through it and see if you can improve the way the app is put together.
+The code is very hacky and contains a number of bugs
+Why not work through it and see if 
+you can improve the way the app is 
+put together.
