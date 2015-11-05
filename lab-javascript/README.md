@@ -123,6 +123,33 @@ Classes in TypeScript are just a shorthand for the same prototype-based OO that 
 In the future browser will not require compiolers like TypeScript they will be able to handle the class syntax nativly.
 Microsoft Edge, Firefox and Chrome already do.
 
+#Template Strings
+
+Traditionaly in JavaScript we would join strigs and variable together using +. Whilst this works it can be messy when you are working 
+with lots of variables.
+
+	function greeter(person : Person) {
+			return "Hello, " + person.firstname + " " + person.lastname;
+		}
+		
+To make it better ES2015 now has templte strings which allow this syntax:
+
+	function greeter(person : Person) {
+		return `Hello, ${person.firstname} ${person.lastname}`;
+	}
+	
+Template strings are enclosed by the back-tick (` `) (grave accent) character instead of double or single quotes. On many keyboard the grave key
+can be foud under or near the ESC key.
+
+You can also use this to span multiple lines. For example this is valid and the new lie will actually be interpreted.
+
+	function greeter(person : Person) {
+			return `Hello, ${person.firstname} ${person.lastname}
+			this is valid`;
+		}
+		
+Run the function through the TypeScript compiler and see how the resultant JS file include a new line.
+
 #5. Use in a site
 
 Open the index.html file and add the following code. It's basically just adding the JavaScript file to our page.
@@ -145,7 +172,7 @@ Then
 	
 When the browser loads go to the url /lab-javascript/
 
-# For As loops
+#6. For As loops
 
 If we have an array of students we might want to loop through them. Here is a new Syntax called "for of". Once you compile the code you
 will see that it uses a standard for loop in the .js file.
@@ -159,7 +186,7 @@ will see that it uses a standard for loop in the .js file.
 		document.body.innerHTML += greeter(v);
 	}
 
-#6. Rest Parameters
+#7. Rest Parameters
 
 Sometimes, you want to work with multiple parameters as a 
 group, or you may not know how many parameters a function will ultimately take. In JavaScript, you can work with 
@@ -178,7 +205,7 @@ the arguments direction using the  arguments variable that is visible inside eve
 	}
 
 	
-#Destructuring
+#8. Destructuring
 
 A destructuring declaration introduces one or more named variables and initializes 
 them with values extracted from properties of an object or elements of an array.
@@ -197,16 +224,13 @@ them with values extracted from properties of an object or elements of an array.
 		return listOfStudents;
 	}
 	
-#Spread
-
-
-	
-#7. Arrow Functions and using 'this'
+#9. Arrow Functions and using 'this'
 How 'this' works in JavaScript functions is a common theme in programmers coming to JavaScript. Indeed, learning how to use it is something of a rite of passage as developers become more accustomed to working in JavaScript. Since TypeScript is a superset of JavaScript, TypeScript developers also need to learn how to use 'this' and how to spot when it's not being used correctly. A whole article could be written on how to use 'this' in JavaScript, and many have. Here, we'll focus on some of the basics. 
 
  In JavaScript, 'this' is a variable that's set when a function is called. This makes it a very powerful and flexible feature, but it comes at the cost of always having to know about the context that a function is executing in. This can be notoriously confusing, when, for example, when a function is used as a callback.
 
  Let's look at an example:
+ 
 	var deck = {
 		suits: ["hearts", "spades", "clubs", "diamonds"],
 		cards: Array(52),

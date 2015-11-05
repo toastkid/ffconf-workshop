@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../index_files/feedback.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bg-wrap">
+        <div class="content" role="main">
+			<h1>My Feedback App</h1>
+			<section>
+				<div class="container">
+					<div ng-app="ratingApp">
+                        The App is going to go {{'here' + '!'}}
+						<div ng-view></div>
+					</div>
+				</div>
+			</section>
+		</div>     
+    </div>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../lib/angular/angular.js"></script> 
+    <script src="../lib/angular-route/angular-route.min.js"></script>  
+    <script src="../lib/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="../lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../lib/highcharts-release/highcharts.js"></script>
+    <script src="../lib/highchart-ng/dist/highcharts-ng.min.js"></script>
+    <script src="../lab-angular/app.js"></script>
+</body>
+</html> 
